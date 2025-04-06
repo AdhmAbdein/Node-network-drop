@@ -1,0 +1,9 @@
+
+groups:
+  - name: nod_network_drop
+    rules:
+      - record: nod_network_drop_rule
+        expr: rate(node_network_receive_drop_total[1m]) + rate(node_network_transmit_drop_total[1m])
+        labels:
+          node1: nod_network_drop
+

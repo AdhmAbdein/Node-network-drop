@@ -1,0 +1,15 @@
+groups:
+  - name: nod_network_drop
+    rules:
+      - alert: nod_network_drop_alert
+        expr: nod_network_drop_rule > 10
+        for: 5m
+        labels:
+          node1: nod_network_drop
+        annotations:
+          summary: "node network drop in {{ $labels.instance }}"
+          description: "node network drop  is {{ $value }}"
+
+
+
+                     
